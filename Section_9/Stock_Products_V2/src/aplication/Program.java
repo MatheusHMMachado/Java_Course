@@ -8,16 +8,19 @@ public class Program {
 	public static void main(String[] args) {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner (System.in);
-		Products Product;
-		Product = new Products();
 		
+		//Iniciei as variáveis necessárias para alocar temporariamente os valores informados pelo usuário.
 		System.out.println("Enter product data: ");
 		System.out.print("Name: ");
-		Product.name = sc.next();
+		String name = sc.next();
 		System.out.print("Price: ");
-		Product.price = sc.nextDouble();
+		double price = sc.nextDouble();
 		System.out.print("Quantity in stock: ");
-		Product.quantity = sc.nextInt();
+		int quantity = sc.nextInt();
+		
+		//Criei um objeto Product do tipo Products. 
+		//Instanciei o objeto Product passando como parâmetro os valores contidos nas variáveis iniciadas acima.
+		Products Product = new Products(name, price, quantity);
 		
 		System.out.printf("%nProduct data: " + Product + "%n");
 		
